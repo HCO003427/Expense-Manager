@@ -1,14 +1,22 @@
 <div class="container">
-  <form>
+  <!-- {{login.value | json}}
+  {{loginForm | json}} -->
+  <form #userLogin ="ngForm" (ngSubmit)="login()" novalidate>
+      <div *ngIf = "errorMsg">
+          <span class="text-danger">{{errorMsg}}</span>
+        </div>
     <div class="form-group">
       <label for="userName">UserName</label>
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input name = "userName" id="userName" type="text" class ="form-control col-xs-4">
+      <input name = "userName" id="userName" type="text" [(ngModel)]="loginForm.userName"
+      class ="form-control col-xs-4" #userName="ngModel"
+      >
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input name = "password" id="password" type="password" class ="form-control col-xs-4">
+        <input name = "password" id="password" type="password" [(ngModel)]="loginForm.password"
+        class ="form-control col-xs-4" #password="ngModel">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    
   </form>
 </div>
