@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginForm } from '../Models/user-login.model';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,22 +13,21 @@ export class LoginComponent implements OnInit {
     password: ''
   };
   errorMsg = '';
-  constructor(private router: Router) { }
+  isLoggedIn: boolean;
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
   login() {
     console.log('User Name :' + this.loginForm.userName + 'Password : ' + this.loginForm.password);
-
-    if (this.loginForm.userName === 'admin' && this.loginForm.password === 'admin') {
-      localStorage.setItem('user', 'admin');
-      console.log(localStorage.getItem('user'));
-      this.router.navigate(['/home']);
+    this.isLoggedIn = this.loginService.login(this.loginForm.userName, this.loginForm.password);
+    if (!this.isLoggedIn) {
+      this.errorMsg = 'Incorrect Credentials';
     } else {
-      this.errorMsg = 'Inavalid Credentials';
+      return;
+    }
     }
 
-  }
 
 }

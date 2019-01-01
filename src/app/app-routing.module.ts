@@ -5,6 +5,7 @@ import { ExpensesComponent } from './expenses/expenses.component';
 import { IncomeComponent } from './income/income.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
+import { LoginCheck } from './guards/login.guard';
 
 
 const routes: Routes = [
@@ -19,15 +20,18 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [LoginCheck]
     },
     {
         path: 'expenses',
-        component: ExpensesComponent
+        component: ExpensesComponent,
+        canActivate: [LoginCheck]
     },
     {
         path: 'income',
-        component: IncomeComponent
+        component: IncomeComponent,
+        canActivate: [LoginCheck]
     },
     {
         path: '**',
