@@ -1,4 +1,5 @@
 export class LoginForm {
-  userName: string;
+  user_id?: number;
+  user_name: string;
   password: string;
 }

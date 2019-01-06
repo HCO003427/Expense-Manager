@@ -9,7 +9,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: LoginForm = {
-    userName: '',
+    user_name: '',
     password: ''
   };
   errorMsg = '';
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('User Name :' + this.loginForm.userName + 'Password : ' + this.loginForm.password);
-    this.isLoggedIn = this.loginService.login(this.loginForm.userName, this.loginForm.password);
+    this.isLoggedIn = this.loginService.login(this.loginForm);
     if (!this.isLoggedIn) {
       this.errorMsg = 'Incorrect Credentials';
     } else {
