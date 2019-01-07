@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginForm } from '../Models/user-login.model';
+import { LoginComponent } from '../login/login.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private URL = 'http://localhost:8080/';
+
+  private URL = 'http://localhost:8080/users';
   constructor(private router: Router, private http: HttpClient) { }
 
   login(loginForm: LoginForm): any {
-    this.http.post<LoginForm>(`${URL}Users`, loginForm).subscribe(
+    const headers = new HttpHeaders();
+      headers.append('Authorization', 'Basic ' + btoa('user:05b69817-a057-4926-a1f2-e94ee8938eee'));
+      headers.append('Access-Control-Allow-Origin', 'http://localhost:8000');
+headers.append('Access-Control-Allow-Credentials', 'true');
+    this.http.post<LoginForm>('http://localhost:8080/users', loginForm, {headers: headers}).subscribe(
       user => {
         if (user.user_id !== 0 && user.user_name === loginForm.user_name) {
           localStorage.setItem('user', 'admin');
@@ -21,6 +27,9 @@ export class LoginService {
         } else {
           return false;
         }
+      },
+      error => {
+        console.log('user doesnt exists');
       }
     );
   }
@@ -29,7 +38,7 @@ export class LoginService {
     return localStorage.getItem('user');
   }
 
- {
+  isLoggedIn() {
 
     if (!!this.getUser()) {
       console.log('inside login service');

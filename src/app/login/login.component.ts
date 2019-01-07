@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log('User Name :' + this.loginForm.userName + 'Password : ' + this.loginForm.password);
+    console.log('User Name :' + this.loginForm.user_name + 'Password : ' + this.loginForm.password);
     this.isLoggedIn = this.loginService.login(this.loginForm);
     if (!this.isLoggedIn) {
       this.errorMsg = 'Incorrect Credentials';
