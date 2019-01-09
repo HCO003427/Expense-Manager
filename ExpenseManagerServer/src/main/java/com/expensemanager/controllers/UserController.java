@@ -33,4 +33,6 @@ public class UserController {
 	public List<User> getAllUsers(){
 		return repo.findAll();
 	}
+	
+	
 }

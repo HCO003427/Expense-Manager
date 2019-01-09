@@ -1,0 +1,79 @@
+<div class="container">
+  <h2 class="text-center">Manage Transactions</h2>
+  <h3 class="text-center">{{date |date:"dd-MM-yyyy"}}</h3>
+  <div>
+    <button class="btn btn-success btn-lg" (click)="addIncome()">
+        Add Income
+    </button>
+    <button class="btn btn-danger btn-lg float-right" (click)="addIncome()">
+        Add Expense
+    </button>
+  </div>
+  <br>
+  <div class="clearfix"></div>
+  <table class="table table-bordered">
+  
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Sub_Category</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions; let index = index">
+        <td>
+          <select
+              #type="ngModel" class="custom-select"  [class.is-invalid]="false"
+              name="type" [(ngModel)]="transaction.type">
+        <option value="Expense">Expense</option>
+        <option value="Income">Income</option>
+      </select>
+        </td>
+        <td>
+          <input
+            type="text"
+            name="amount"
+            #amount="ngModel"
+            [(ngModel)]="transaction.amount"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <input
+            type="text"
+            name="category"
+            #category="ngModel"
+            [(ngModel)]="transaction.category"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            name="sub_category"
+            #sub_category="ngModel"
+            [(ngModel)]="transaction.sub_category">
+        </td>
+        <td>
+          <input
+            class="form-control"
+            type="text"
+            name ="desc"
+            #desc="ngModel"
+            [(ngModel)]="transaction.desc">
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            (click)="transactions.splice(index, 1); refresh.next()">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  
+  </table> 
+</div>

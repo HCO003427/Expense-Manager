@@ -1,0 +1,10 @@
+insert into public.transactions values (101,158,'Food','2019-01-20','Chicken Briyani','Lunch','Expense');
+insert into public.transactions values (102,220,'Food','2019-01-20','','Veggies','Expense');
+insert into public.transactions values (103,10000.66,'Salary','2019-01-20','','TCS','Income');
+insert into public.transactions values (104,1000,'Entairtainment','2019-01-20','','Booze','Expense');
+insert into public.transactions values (105,85.56,'fuel','2019-01-20','','Petrol','Expense');
+insert into public.transactions values (106,158,'Food','2019-01-20','Mutton Briyani','Lunch','Expense');
+insert into public.transactions values (107,220,'Food','2019-01-20','','Groceries','Expense');
+insert into public.transactions values (108,10000.66,'Salary','2019-01-20','','Deposits','Income');
+insert into public.transactions values (109,1000,'Entairtainment','2019-01-20','','Movie','Expense');
+insert into public.transactions values (110,85.56,'fuel','2019-01-20','20/01 - HP','Petrol','Expense');

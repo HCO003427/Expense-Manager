@@ -22,6 +22,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { Router } from '@angular/router';
 
 const colors: any = {
   red: {
@@ -118,9 +119,15 @@ export class HomeComponent  {
     }
   ];
 
-  activeDayIsOpen = true;
+  activeDayIsOpen = false;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, private router: Router) {}
+
+  goToTransactions(day) {
+    // console.log(day);
+    this.router.navigate(['/addTransaction', {date: day.date}]);
+
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

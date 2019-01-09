@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginForm } from '../Models/user-login.model';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { ReturnStatement } from '@angular/compiler';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,10 +23,10 @@ export class LoginComponent implements OnInit {
   login() {
     console.log('User Name :' + this.loginForm.user_name + 'Password : ' + this.loginForm.password);
     this.isLoggedIn = this.loginService.login(this.loginForm);
-    if (!this.isLoggedIn) {
-      this.errorMsg = 'Incorrect Credentials';
-    } else {
+    if (this.isLoggedIn) {
       return;
+    } else {
+      this.errorMsg = 'Incorrect Credentials';
     }
     }
 

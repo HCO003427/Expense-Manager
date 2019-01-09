@@ -16,6 +16,7 @@ import { IncomeComponent } from './income/income.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     ExpensesComponent,
     IncomeComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    AddTransactionComponent
   ],
   imports: [
     BrowserModule,
