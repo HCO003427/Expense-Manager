@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ExpenseManagerServer/src/main/resources/data.sql&apos; to &apos;user_data.sql&apos;" description="Rename resource &apos;data.sql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/data.sql" name="user_data.sql" stamp="1547050568747" updateReferences="true"/>
+</session>

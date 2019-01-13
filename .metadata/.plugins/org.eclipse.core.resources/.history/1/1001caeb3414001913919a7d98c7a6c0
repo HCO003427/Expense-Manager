@@ -1,0 +1,9 @@
+package com.expensemanager.repos;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.expensemanager.models.Transactions;
+
+public interface TransactionRepo extends JpaRepository<Transactions, Integer>{
+
+}
