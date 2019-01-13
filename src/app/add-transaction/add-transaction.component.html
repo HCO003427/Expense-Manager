@@ -1,11 +1,24 @@
 <div class="container">
+  <button class="btn btn-secondary btn-sm" (click)="backToHome()">back</button>
   <h2 class="text-center">Manage Transactions</h2>
-  <h3 class="text-center">{{date |date:"dd-MM-yyyy"}}</h3>
+  <h3 class="text-center">
+      <button class="btn btn-secondary btn-sm" (click)="goPrev()">
+      <i class="material-icons">
+          keyboard_arrow_left
+      </i>
+      </button>
+    {{date |date:"dd-MM-yyyy"}}
+     <button class="btn btn-secondary btn-sm" (click)="goNext()">
+    <i class="material-icons">
+        keyboard_arrow_right
+    </i>
+  </button> 
+  </h3>
   <div>
     <button class="btn btn-success btn-lg" (click)="addIncome()">
         Add Income
     </button>
-    <button class="btn btn-danger btn-lg float-right" (click)="addIncome()">
+    <button class="btn btn-danger btn-lg float-right" (click)="addExpense()">
         Add Expense
     </button>
   </div>
@@ -15,65 +28,21 @@
   
     <thead>
       <tr>
-        <th>Type</th>
-        <th>Amount</th>
-        <th>Category</th>
-        <th>Sub_Category</th>
+        <th>Type <span class="text-danger">*</span></th>
+        <th>Amount <span class="text-danger">*</span></th>
+        <th>Category <span class="text-danger">*</span></th>
+        <th>Sub_Category<span class="text-danger">*</span></th>
         <th>Description</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaction of transactions; let index = index">
-        <td>
-          <select
-              #type="ngModel" class="custom-select"  [class.is-invalid]="false"
-              name="type" [(ngModel)]="transaction.type">
-        <option value="Expense">Expense</option>
-        <option value="Income">Income</option>
-      </select>
-        </td>
-        <td>
-          <input
-            type="text"
-            name="amount"
-            #amount="ngModel"
-            [(ngModel)]="transaction.amount"
-            (change)="refresh.next()">
-        </td>
-        <td>
-          <input
-            type="text"
-            name="category"
-            #category="ngModel"
-            [(ngModel)]="transaction.category"
-            (change)="refresh.next()">
-        </td>
-        <td>
-          <input
-            class="form-control"
-            type="text"
-            name="sub_category"
-            #sub_category="ngModel"
-            [(ngModel)]="transaction.sub_category">
-        </td>
-        <td>
-          <input
-            class="form-control"
-            type="text"
-            name ="desc"
-            #desc="ngModel"
-            [(ngModel)]="transaction.desc">
-        </td>
-        <td>
-          <button
-            class="btn btn-danger"
-            (click)="transactions.splice(index, 1); refresh.next()">
-            Delete
-          </button>
-        </td>
+      <tr *ngFor="let transaction of transactions" 
+          class ="app-transaction-details"
+          [transaction]="transaction"
+          (transactionDeleted)="refreshTransactions($event)">
       </tr>
     </tbody>
-  
+ 
   </table> 
 </div>

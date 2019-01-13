@@ -17,6 +17,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { AddTransactionComponent } from './add-transaction/add-transaction.component';
+import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddTransactionComponent } from './add-transaction/add-transaction.compo
     IncomeComponent,
     NotFoundComponent,
     HomeComponent,
-    AddTransactionComponent
+    AddTransactionComponent,
+    TransactionDetailsComponent
   ],
   imports: [
     BrowserModule,

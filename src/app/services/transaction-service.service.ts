@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Transactions } from '../Models/Transactions.model';
 import { Observable } from 'rxjs';
 
@@ -14,5 +14,15 @@ export class TransactionServiceService {
   getTransactionsbyDate(date: string): Observable<Transactions[]> {
     return this.http.get<Transactions[]>(`${this.URL}/${date}`);
 
+  }
+
+  updateTransaction(transaction: Transactions): Observable<Transactions> {
+    return this.http.post<Transactions>(this.URL, transaction);
+  }
+
+  deleteTransaction(transaction: Transactions): Observable<any> {
+    const headers = new HttpHeaders();
+      headers.append('Access-Control-Allow-Origin', '*');
+      return this.http.delete<any>(`${this.URL}/${transaction.transaction_id}`, {headers: headers});
   }
 }

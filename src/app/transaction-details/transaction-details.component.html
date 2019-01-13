@@ -1,0 +1,44 @@
+<td>
+  <select [disabled]="!editEnabled" #type="ngModel" class="custom-select" [class.is-invalid]="false" name="type" required
+    [(ngModel)]="transaction.type">
+    <option value="Expense">Expense</option>
+    <option value="Income">Income</option>
+  </select>
+</td>
+<td>
+  <input [disabled]="!editEnabled" type="text" name="amount" #amount="ngModel" [(ngModel)]="transaction.amount"
+    (blur)="validateAmount(amount.value)">
+    <span class="text-danger" *ngIf="amount.touched && amountHasErrors">Please enter an amount</span>
+</td>
+<td>
+  <input [disabled]="!editEnabled" type="text" name="category" #category="ngModel" [(ngModel)]="transaction.category" required
+    (change)="refresh.next()">
+    <span class="text-danger" *ngIf="category.errors?.required && category.touched">Please select category</span>
+</td>
+<td>
+  <input [disabled]="!editEnabled" class="form-control" type="text" name="sub_category" #sub_category="ngModel" required
+    [(ngModel)]="transaction.sub_category">
+    <span class="text-danger" *ngIf="sub_category.errors?.required && sub_category.touched">Please select sub_category</span>
+</td>
+<td>
+  <input [disabled]="!editEnabled" class="form-control" type="text" name="desc" #desc="ngModel" [(ngModel)]="transaction.desc">
+</td>
+<td>
+  <div class="btn btn-group">
+    <button *ngIf="!editEnabled" class="btn btn-primary" (click)="editTransaction()">
+      <i class="material-icons">
+        create
+      </i>
+    </button>
+    <button *ngIf="editEnabled" class="btn btn-success" (click)="updateTransaction()">
+      <i class="material-icons">
+        done
+      </i>
+    </button>
+    <button class="btn btn-danger" (click)="deleteTransaction()">
+      <i class="material-icons">
+        remove_circle
+      </i>
+    </button>
+  </div>
+</td>
