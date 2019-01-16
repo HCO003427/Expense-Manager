@@ -1,4 +1,0 @@
-spring.datasource.url= jdbc:postgresql://localhost:5432/ExpenseManager
-spring.datasource.username=expensemanager
-spring.datasource.password=Knowledge
-spring.jpa.hibernate.ddl-auto=create-drop

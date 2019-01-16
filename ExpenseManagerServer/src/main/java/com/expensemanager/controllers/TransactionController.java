@@ -25,7 +25,7 @@ public class TransactionController {
 	@Autowired
 	TransactionRepo repo;
 	
-	@GetMapping(path="/transactions/{date}")
+	@GetMapping(path="/api/transactions/{date}")
 	public List<Transactions> getTransactionByDate(@PathVariable("date") String date) throws ParseException{
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd"); 
 		Date inputDate= df.parse(date);
@@ -35,13 +35,13 @@ public class TransactionController {
 		return repo.findAllByDate(sqlDate);
 	}
 	
-	@PostMapping(path="/transactions")
+	@PostMapping(path="/api/transactions")
 	public Transactions updateTransaction(@RequestBody Transactions transaction) {
 		System.out.println("Transaction Updated/ saved");
 		return repo.save(transaction);
 	}
 	
-	@DeleteMapping(path="/transactions/{transaction_id}")
+	@DeleteMapping(path="/api/transactions/{transaction_id}")
 	public boolean deleteTransaction(@PathVariable("transaction_id") Transactions transaction) {
 		System.out.println("Transaction Deleted");
 		repo.deleteById(transaction.getTransaction_id());

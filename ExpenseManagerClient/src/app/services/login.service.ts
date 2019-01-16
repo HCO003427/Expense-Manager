@@ -9,7 +9,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class LoginService {
 
-  private URL = 'http://localhost:8080/users';
+  private URL = 'http://localhost:8080/api/users';
   constructor(private router: Router, private http: HttpClient) { }
 
   login(loginForm: LoginForm): any {
@@ -17,7 +17,7 @@ export class LoginService {
       headers.append('Authorization', 'Basic ' + btoa('user:05b69817-a057-4926-a1f2-e94ee8938eee'));
       headers.append('Access-Control-Allow-Origin', 'http://localhost:8000');
 headers.append('Access-Control-Allow-Credentials', 'true');
-    this.http.post<LoginForm>('http://localhost:8080/users', loginForm, {headers: headers}).subscribe(
+    this.http.post<LoginForm>(this.URL, loginForm, {headers: headers}).subscribe(
       user => {
         if (user.user_id !== 0 && user.user_name === loginForm.user_name) {
           localStorage.setItem('user', 'admin');

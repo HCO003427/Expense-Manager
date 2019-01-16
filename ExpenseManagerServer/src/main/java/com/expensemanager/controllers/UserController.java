@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.expensemanager.models.User;
 import com.expensemanager.repos.UserRepo;
@@ -20,7 +22,7 @@ public class UserController {
 	@Autowired
 	UserRepo repo;
 	
-	@PostMapping(path="/users")
+	@PostMapping(path="/api/users")
 	public User validateUser(@RequestBody User user) {
 		System.out.println(user.getUser_name());
 		System.out.println(user.getPassword());
@@ -29,7 +31,7 @@ public class UserController {
 		
 	}
 	
-	@GetMapping(path="/users")
+	@GetMapping(path="/api/users")
 	public List<User> getAllUsers(){
 		return repo.findAll();
 	}

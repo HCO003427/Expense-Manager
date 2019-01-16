@@ -1,0 +1,10 @@
+com\expensemanager\configuraions\CorsConfiguration$1.class
+com\expensemanager\models\Transactions.class
+com\expensemanager\models\User.class
+com\expensemanager\services\UserService.class
+com\expensemanager\repos\UserRepo.class
+com\expensemanager\controllers\UserController.class
+com\expensemanager\controllers\TransactionController.class
+com\expensemanager\configuraions\CorsConfiguration.class
+com\expensemanager\ExpenseManagerServerApplication.class
+com\expensemanager\repos\TransactionRepo.class
