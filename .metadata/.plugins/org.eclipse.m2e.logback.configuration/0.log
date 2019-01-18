@@ -2187,3 +2187,6 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2019-01-18 20:52:26,267 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
 2019-01-18 20:52:27,068 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using null lifecycle mapping for MavenProject: com.expesnemanager:ExpenseManagerServer:0.0.1-SNAPSHOT @ D:\Workspace\Expense-Manager\ExpenseManagerServer\pom.xml.
 2019-01-18 20:52:28,503 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2019-01-18 22:50:23,455 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2019-01-18 22:50:33,062 [Worker-19: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-18 22:50:33,062 [Worker-19: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
