@@ -33,6 +33,7 @@ public class UserController {
 	
 	@GetMapping(path="/api/users")
 	public List<User> getAllUsers(){
+		System.out.println("Request to fetch all users");
 		return repo.findAll();
 	}
 	
