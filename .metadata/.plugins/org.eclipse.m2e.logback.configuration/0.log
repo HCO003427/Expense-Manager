@@ -2167,3 +2167,23 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2019-01-16 21:25:16,975 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
 2019-01-16 21:25:20,333 [Worker-15: Launching ExpenseManagerServer (27)] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
 2019-01-16 21:25:20,333 [Worker-15: Launching ExpenseManagerServer (27)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-01-16 22:36:28,613 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-01-16 22:36:51,566 [Worker-2: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 22:36:51,567 [Worker-2: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2019-01-16 22:37:24,149 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2019-01-16 22:37:30,194 [Worker-8: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 22:37:30,194 [Worker-8: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-01-16 22:43:08,982 [Worker-13: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 22:43:08,982 [Worker-13: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-01-16 22:43:09,182 [Worker-13: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 22:43:09,182 [Worker-13: Launching ExpenseManagerServer (28)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-01-16 23:28:42,055 [Worker-16: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 23:28:42,055 [Worker-16: Launching Executing clean in D__Workspace_Expense-Manager_ExpenseManagerServer] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2019-01-16 23:34:56,573 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-01-16 23:35:09,775 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2019-01-16 23:35:13,656 [Worker-11: Launching ExpenseManagerServer (29)] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Workspace\Expense-Manager\ExpenseManagerServer
+2019-01-16 23:35:13,657 [Worker-11: Launching ExpenseManagerServer (29)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-01-18 20:41:32,450 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-01-18 20:52:26,267 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-01-18 20:52:27,068 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using null lifecycle mapping for MavenProject: com.expesnemanager:ExpenseManagerServer:0.0.1-SNAPSHOT @ D:\Workspace\Expense-Manager\ExpenseManagerServer\pom.xml.
+2019-01-18 20:52:28,503 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec

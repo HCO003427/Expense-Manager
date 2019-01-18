@@ -1,0 +1,2 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>reverted ddl changes</message>\r\n<message>changing Hibernate DDl</message>\r\n<message>changing hibernate ddl property&\#x0A;</message>\r\n<message>changing service port numbers</message>\r\n<message>changing port number to 8081</message>\r\n<message>changing DB details</message>\r\n</messages>
+eclipse.preferences.version=1
