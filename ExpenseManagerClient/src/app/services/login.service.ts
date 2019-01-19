@@ -23,7 +23,6 @@ headers.append('Access-Control-Allow-Credentials', 'true');
         if (user.user_id !== 0 && user.user_name === loginForm.user_name) {
           localStorage.setItem('user', 'admin');
           console.log(localStorage.getItem('user'));
-          this.router.navigate(['/home']);
           return true;
         } else {
           return false;

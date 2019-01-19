@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.isLoggedIn = this.loginService.login(this.loginForm);
     if (this.isLoggedIn) {
       console.log('In IF of login()');
-      return true;
+      this.router.navigate(['/home']);
     } else {
       console.log('In ELSE of login()');
       this.errorMsg = 'Incorrect Credentials';
