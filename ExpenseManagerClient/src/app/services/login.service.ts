@@ -31,7 +31,7 @@ headers.append('Access-Control-Allow-Credentials', 'true');
         console.log('user doesnt exists');
       }
     );
-    return this.isLoggedIn();
+    return !!localStorage.getItem('user');
   }
 
   getUser() {
