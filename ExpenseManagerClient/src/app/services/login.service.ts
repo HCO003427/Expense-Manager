@@ -12,7 +12,7 @@ export class LoginService {
   private URL = 'http://192.168.1.7:8081/api/users';
   constructor(private router: Router, private http: HttpClient) { }
 
-  login(loginForm: LoginForm): any {
+  login(loginForm: LoginForm): boolean {
     const headers = new HttpHeaders();
       headers.append('Authorization', 'Basic ' + btoa('user:05b69817-a057-4926-a1f2-e94ee8938eee'));
       headers.append('Access-Control-Allow-Origin', 'http://localhost:8000');
@@ -23,15 +23,15 @@ headers.append('Access-Control-Allow-Credentials', 'true');
         if (user.user_id !== 0 && user.user_name === loginForm.user_name) {
           localStorage.setItem('user', 'admin');
           console.log(localStorage.getItem('user'));
-          return true;
-        } else {
-          return false;
-        }
+          } else {
+          console.log('User not found - login service');
+          }
       },
       error => {
         console.log('user doesnt exists');
       }
     );
+    return this.isLoggedIn();
   }
 
   getUser() {
