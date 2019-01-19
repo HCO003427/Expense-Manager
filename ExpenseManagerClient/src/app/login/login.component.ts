@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   login() {
     console.log('User Name :' + this.loginForm.user_name + 'Password : ' + this.loginForm.password);
     this.isLoggedIn = this.loginService.login(this.loginForm);
+    console.log(this.isLoggedIn);
     if (this.isLoggedIn) {
       console.log('In IF of login()');
       this.router.navigate(['/home']);
