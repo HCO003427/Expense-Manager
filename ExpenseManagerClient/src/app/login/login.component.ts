@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     user_name: '',
     password: ''
   };
-  errorMsg = '';
+  errorMsg: string;
   isLoggedIn: boolean;
   constructor(private router: Router, private loginService: LoginService) { }
 
