@@ -1275,3 +1275,7 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
 	ExpenseManagerServer[*]: {CONTENT}
 		ResourceDelta(/ExpenseManagerServer/target)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-01-19 23:05:38.717
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CONTENT}
+	ResourceDelta(/ExpenseManagerClient)[*]]

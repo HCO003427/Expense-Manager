@@ -24,8 +24,10 @@ export class LoginComponent implements OnInit {
     console.log('User Name :' + this.loginForm.user_name + 'Password : ' + this.loginForm.password);
     this.isLoggedIn = this.loginService.login(this.loginForm);
     if (this.isLoggedIn) {
-      return;
+      console.log('In IF of login()');
+      return true;
     } else {
+      console.log('In ELSE of login()');
       this.errorMsg = 'Incorrect Credentials';
     }
     }
