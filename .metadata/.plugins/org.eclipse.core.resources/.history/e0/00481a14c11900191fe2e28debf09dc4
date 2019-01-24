@@ -1,8 +1,0 @@
-spring.datasource.url= jdbc:postgresql://localhost:5432/ExpenseManager
-spring.datasource.username=expensemanager
-spring.datasource.password=Knowledge
-spring.jpa.hibernate.ddl-auto=update
-spring.datasource.hikari.maximum-pool-size=2
-spring.jpa.properties.hibernate.globally_quoted_identifiers=true
-
-

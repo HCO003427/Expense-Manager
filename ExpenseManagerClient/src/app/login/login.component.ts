@@ -22,16 +22,21 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('User Name :' + this.loginForm.user_name + 'Password : ' + this.loginForm.password);
-    this.isLoggedIn = this.loginService.login(this.loginForm);
-    console.log(this.isLoggedIn);
-    if (this.isLoggedIn) {
-      console.log('In IF of login()');
-      this.router.navigate(['/home']);
-    } else {
-      console.log('In ELSE of login()');
-      this.errorMsg = 'Incorrect Credentials';
-    }
-    }
+    this.loginService.login(this.loginForm).subscribe(
+      user => {
+        if (!!user && user.user_id !== 0 && user.user_name === this.loginForm.user_name) {
+          localStorage.setItem('user', 'admin');
+          console.log(localStorage.getItem('user'));
+          this.router.navigate(['/home']);
+          } else {
+          console.log('User not found - login service');
+          this.errorMsg = 'Incorrect Credentials';
 
-
+          }
+      },
+      error => {
+        console.log('user doesnt exists');
+      }
+    );
+    }
 }

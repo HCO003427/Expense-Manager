@@ -1,5 +1,0 @@
-package com.expensemanager.configuraions;
-
-public class MvcConfig {
-
-}

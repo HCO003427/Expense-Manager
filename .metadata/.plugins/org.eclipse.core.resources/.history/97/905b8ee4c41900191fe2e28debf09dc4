@@ -1,9 +1,0 @@
-spring.datasource.url= jdbc:postgresql://localhost:5432/expensemanager
-spring.datasource.username=expensemanager
-spring.datasource.password=Knowledge
-spring.jpa.hibernate.ddl-auto=create-drop
-spring.datasource.hikari.maximum-pool-size=2
-spring.jpa.properties.hibernate.globally_quoted_identifiers=true
-
-
-server.port=8081

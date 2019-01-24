@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginForm } from '../Models/user-login.model';
 import { LoginComponent } from '../login/login.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,28 +13,14 @@ export class LoginService {
   private URL = 'http://192.168.1.7:8081/api/users';
   constructor(private router: Router, private http: HttpClient) { }
 
-  login(loginForm: LoginForm): boolean {
+  login(loginForm: LoginForm): Observable<LoginForm> {
     const headers = new HttpHeaders();
       headers.append('Authorization', 'Basic ' + btoa('user:05b69817-a057-4926-a1f2-e94ee8938eee'));
       headers.append('Access-Control-Allow-Origin', 'http://localhost:8000');
 headers.append('Access-Control-Allow-Credentials', 'true');
     console.log(this.URL);
-    this.http.post<LoginForm>(this.URL, loginForm, {headers: headers}).subscribe(
-      user => {
-        if (user.user_id !== 0 && user.user_name === loginForm.user_name) {
-          localStorage.setItem('user', 'admin');
-          console.log(localStorage.getItem('user'));
-          } else {
-          console.log('User not found - login service');
-          }
-      },
-      error => {
-        console.log('user doesnt exists');
-      }
-    );
-    return !!localStorage.getItem('user');
+    return this.http.post<LoginForm>(this.URL, loginForm, {headers: headers});
   }
-
   getUser() {
     return localStorage.getItem('user');
   }
