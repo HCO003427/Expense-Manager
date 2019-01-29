@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  private URL = 'http://192.168.1.7:8081/api/users';
+  private URL = 'http://localhost:8080/api/users';
   constructor(private router: Router, private http: HttpClient) { }
 
   login(loginForm: LoginForm): Observable<LoginForm> {
